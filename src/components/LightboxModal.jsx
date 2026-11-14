@@ -101,11 +101,10 @@ export default function LightboxModal({ project, onClose, onOpenQuote }) {
                   e.stopPropagation();
                   setCurrentIdx(i);
                 }}
-                className={`relative shrink-0 w-14 h-12 sm:w-16 sm:h-12 rounded-lg overflow-hidden border-2 transition-all cursor-pointer ${
-                  currentIdx === i
+                className={`relative shrink-0 w-14 h-12 sm:w-16 sm:h-12 rounded-lg overflow-hidden border-2 transition-all cursor-pointer ${currentIdx === i
                     ? 'border-[#FF8C00] scale-105 shadow-md shadow-[#FF8C00]/20'
                     : 'border-transparent opacity-60 hover:opacity-100'
-                }`}
+                  }`}
                 aria-label={`Go to photo ${i + 1}`}
               >
                 <img src={img} alt={`Thumb ${i + 1}`} className="w-full h-full object-cover" />

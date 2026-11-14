@@ -1,4 +1,10 @@
-// Enhanced Real Project Site Images
+// Enhanced Real Project Site Images - Batch 1 & 2
+import site_bruckner_line from '../assets/images/project_site_bruckner_line.webp';
+import site_plant_bay_overview from '../assets/images/project_site_plant_bay_overview.webp';
+import site_tower_hopper_rigging from '../assets/images/project_site_tower_hopper_rigging.webp';
+import site_piping_spool_staging from '../assets/images/project_site_piping_spool_staging.webp';
+import site_heavy_stand_erection from '../assets/images/project_site_heavy_stand_erection.webp';
+
 import site_heavy_line from '../assets/images/project_site_heavy_line_erection.webp';
 import site_production_assembly from '../assets/images/project_site_production_assembly.webp';
 import site_piping_manifold from '../assets/images/project_site_piping_manifold.webp';
@@ -10,7 +16,7 @@ import site_precision_rigging from '../assets/images/project_site_precision_rigg
 import site_roller_unboxing from '../assets/images/project_site_roller_unboxing.webp';
 import site_tank_base from '../assets/images/project_site_tank_base.webp';
 
-// PDF Extracted Historical Project Images
+// Historical Project Documentation Images
 import p1_crane from '../assets/images/project_p1_img2.jpeg';
 import p1_alignment from '../assets/images/project_p1_img3.jpeg';
 import p1_panels from '../assets/images/project_p1_img4.jpeg';
@@ -43,6 +49,71 @@ export const PROJECT_CATEGORIES = [
 ];
 
 export const PROJECTS = [
+  {
+    id: "bruckner-line-installation",
+    title: "Bruckner Film Stretching Line Installation & Optical Alignment",
+    client: "Advanced Film & Flexible Packaging Plant",
+    location: "Industrial Manufacturing Facility",
+    year: "Precision Erection",
+    category: "installation",
+    categoryLabel: "Machine Installation",
+    image: site_bruckner_line,
+    additionalImages: [site_heavy_stand_erection, site_plant_bay_overview, site_heavy_line],
+    description: "Turnkey mechanical installation of world-class German Bruckner film stretching lines. Scope encompassed optical theodolite leveling, high-precision calender roll alignment, bearing housing installation, and synchronized motor drive couplings.",
+    badge: "Bruckner Line Installation"
+  },
+  {
+    id: "plant-wide-bay-setup",
+    title: "Turnkey Industrial Plant Relocation & Bay Machinery Layout",
+    client: "Large Scale Manufacturing Facility",
+    location: "Industrial MIDC Plant Floor",
+    year: "Turnkey Plant Shifting",
+    category: "shifting",
+    categoryLabel: "Machine Shifting",
+    image: site_plant_bay_overview,
+    additionalImages: [site_crate_unloading, site_heavy_stand_erection, site_tank_base],
+    description: "Complete plant bay machine relocation, multi-bay machinery positioning, overhead crane rigging, electrical control panel lineup, and safety corridor creation ensuring seamless plant handover.",
+    badge: "Turnkey Plant Relocation"
+  },
+  {
+    id: "multi-tier-hopper-rigging",
+    title: "Multi-Tier Steel Mezzanine & Hopper Vessel Crane Rigging",
+    client: "Bulk Processing & Storage Facility",
+    location: "Processing Plant Floor",
+    year: "Heavy Crane Lift",
+    category: "shifting",
+    categoryLabel: "Crane Rigging",
+    image: site_tower_hopper_rigging,
+    additionalImages: [site_silo_heavy_lift, site_crane_overhead],
+    description: "Vertical indoor crane hoisting and precision anchoring of conical hopper vessels through multi-level structural steel towers, incorporating aerial safety ladders and elevated catwalk access.",
+    badge: "Vertical Crane Rigging"
+  },
+  {
+    id: "process-piping-spool-staging",
+    title: "Prefabricated Process Piping Spool & Header Manifold Staging",
+    client: "Industrial Chemical & Process Plant",
+    location: "Shop Floor Staging Bay",
+    year: "Process Piping",
+    category: "piping",
+    categoryLabel: "Process Piping",
+    image: site_piping_spool_staging,
+    additionalImages: [site_piping_manifold, site_tank_base, p2_kgflex2],
+    description: "Shop floor staging, pre-fabrication, and fit-up of stainless steel pipe spools, heavy-duty 90-degree elbows, header distribution manifolds, and insulation jackets for automated chemical processing loops.",
+    badge: "Piping Fabrication"
+  },
+  {
+    id: "heavy-mill-stand-erection",
+    title: "Heavy Mill Stand & Continuous Web Processing Machine Erection",
+    client: "Heavy Industrial Manufacturing Facility",
+    location: "Plant Assembly Floor",
+    year: "Heavy Installation",
+    category: "installation",
+    categoryLabel: "Machine Installation",
+    image: site_heavy_stand_erection,
+    additionalImages: [site_bruckner_line, site_roller_machine, site_roller_unboxing],
+    description: "Heavy mill stand positioning, massive bearing housing assembly, crane hook suspension, and protective timber crating unboxing on reinforced shop floors.",
+    badge: "Heavy Machine Erection"
+  },
   {
     id: "heavy-production-line-erection",
     title: "Continuous Multi-Station Production Line Installation & Erection",

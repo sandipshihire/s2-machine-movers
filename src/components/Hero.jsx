@@ -1,6 +1,6 @@
 import React from 'react';
 import { ArrowRight, ChevronRight, Truck, Wrench, Shield, CheckCircle2, PhoneCall } from 'lucide-react';
-import heroBg from '../assets/images/project_p3_img1.jpeg';
+import heroBg from '../assets/images/project_site_plant_bay_overview.webp';
 import { COMPANY_INFO } from '../data/company';
 
 export default function Hero({ onOpenQuote }) {

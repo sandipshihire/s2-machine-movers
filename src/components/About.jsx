@@ -1,7 +1,7 @@
 import React from 'react';
 import { Target, Compass, ShieldCheck, Wrench, CheckCircle, MapPin, Factory } from 'lucide-react';
-import aboutImage from '../assets/images/project_p1_img3.jpeg';
-import craneImage from '../assets/images/project_p1_img2.jpeg';
+import aboutImage from '../assets/images/project_site_bruckner_line.webp';
+import craneImage from '../assets/images/project_site_tower_hopper_rigging.webp';
 import { COMPANY_INFO } from '../data/company';
 
 export default function About() {
@@ -39,10 +39,10 @@ export default function About() {
                   </div>
                   <div>
                     <h4 className="text-sm font-bold text-white font-['Montserrat']">
-                      Precision On-Site Alignment
+                      Bruckner Line & Turnkey Plant Erection
                     </h4>
                     <p className="text-xs text-gray-300">
-                      Optical theodolite leveling & turnkey mechanical execution
+                      Precision optical leveling, heavy roller assembly & turnkey execution
                     </p>
                   </div>
                 </div>

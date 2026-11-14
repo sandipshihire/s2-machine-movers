@@ -27,3 +27,4 @@ dist-ssr
 extract_assets.py
 optimize_logo.py
 process_new_images.py
+process_batch2_images.py
