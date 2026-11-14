@@ -1,3 +1,16 @@
+// Enhanced Real Project Site Images
+import site_heavy_line from '../assets/images/project_site_heavy_line_erection.webp';
+import site_production_assembly from '../assets/images/project_site_production_assembly.webp';
+import site_piping_manifold from '../assets/images/project_site_piping_manifold.webp';
+import site_silo_heavy_lift from '../assets/images/project_site_silo_heavy_lift.webp';
+import site_roller_machine from '../assets/images/project_site_roller_machine.webp';
+import site_crane_overhead from '../assets/images/project_site_crane_overhead.webp';
+import site_crate_unloading from '../assets/images/project_site_crate_unloading.webp';
+import site_precision_rigging from '../assets/images/project_site_precision_rigging.webp';
+import site_roller_unboxing from '../assets/images/project_site_roller_unboxing.webp';
+import site_tank_base from '../assets/images/project_site_tank_base.webp';
+
+// PDF Extracted Historical Project Images
 import p1_crane from '../assets/images/project_p1_img2.jpeg';
 import p1_alignment from '../assets/images/project_p1_img3.jpeg';
 import p1_panels from '../assets/images/project_p1_img4.jpeg';
@@ -26,38 +39,129 @@ export const PROJECT_CATEGORIES = [
   { id: "installation", label: "Machine Installation" },
   { id: "shifting", label: "Machine Shifting" },
   { id: "piping", label: "Piping Work" },
-  { id: "fabrication", label: "Fabrication" }
+  { id: "fabrication", label: "Fabrication & Rigging" }
 ];
 
 export const PROJECTS = [
   {
-    id: "ipg-asia-bopp",
-    title: "IPG ASIA PVT. LTD. BOPP 6.5 Mtr Line",
+    id: "heavy-production-line-erection",
+    title: "Continuous Multi-Station Production Line Installation & Erection",
+    client: "IPG ASIA PVT. LTD. / BOPP Plant",
+    location: "Industrial Manufacturing Plant",
+    year: "Turnkey Erection",
+    category: "installation",
+    categoryLabel: "Machine Installation",
+    image: site_heavy_line,
+    additionalImages: [site_production_assembly, site_roller_machine, p3_ipg1, p3_ipg2],
+    description: "Turnkey mechanical erection of high-capacity continuous production line machinery. Scope included structural frame leveling, multi-bay drive integration, precision guide roller alignment, and coordinated engineering supervision.",
+    badge: "Turnkey Installation"
+  },
+  {
+    id: "stainless-process-piping-manifold",
+    title: "Industrial Stainless Steel Process Piping & Header Manifolds",
+    client: "Process Engineering Plant / KG FLEX",
+    location: "Industrial MIDC Facility",
+    year: "Process Piping",
+    category: "piping",
+    categoryLabel: "Process Piping",
+    image: site_piping_manifold,
+    additionalImages: [site_tank_base, p2_kgflex2, p2_kgflex1, p2_kgflex3],
+    description: "High-precision fabrication and on-site positioning of industrial stainless steel process piping circuits, automated valve manifolds, and floor-level distribution loops adhering to certified plant safety standards.",
+    badge: "Process Piping"
+  },
+  {
+    id: "outdoor-silo-crane-rigging",
+    title: "Heavy Silo & High-Capacity Storage Tank Crane Lifting",
+    client: "Bulk Storage & Material Facility",
+    location: "Outdoor Plant Site",
+    year: "Heavy Lift",
+    category: "shifting",
+    categoryLabel: "Machine Shifting",
+    image: site_silo_heavy_lift,
+    additionalImages: [p1_crane, site_crane_overhead],
+    description: "Heavy mobile crane rigging and vertical positioning of dual industrial storage silos, high-altitude pipe interconnects, and external safety catwalk staircases with synchronized rigging calculations.",
+    badge: "Heavy Crane Lift"
+  },
+  {
+    id: "web-roller-machine-assembly",
+    title: "Industrial Film Web Processing & Calender Roller Machine Assembly",
+    client: "Advanced Film & Flexible Packaging Plant",
+    location: "Shop Floor Production Line",
+    year: "Precision Assembly",
+    category: "installation",
+    categoryLabel: "Machine Installation",
+    image: site_roller_machine,
+    additionalImages: [site_roller_unboxing, site_crate_unloading],
+    description: "Multi-ton industrial web calender and roller machine erection, chrome roller surface protection, hydraulic line interconnects, and sub-millimeter axial alignment for high-speed operation.",
+    badge: "Precision Machinery"
+  },
+  {
+    id: "overhead-eot-crane-rigging",
+    title: "Overhead EOT Crane Hook & Hoist Precision Rigging",
+    client: "Heavy Engineering Plant",
+    location: "Main Plant Bay",
+    year: "Crane Rigging",
+    category: "shifting",
+    categoryLabel: "Crane Rigging",
+    image: site_crane_overhead,
+    additionalImages: [site_precision_rigging, p1_crane],
+    description: "Aerial work platform rigging inspection, high-tonnage EOT gantry crane hook alignment, hoist load balancing, and overhead beam verification for secure indoor machinery relocation.",
+    badge: "Aerial Rigging"
+  },
+  {
+    id: "precision-subassembly-rigging",
+    title: "Precision Sub-Assembly Rigging & Specialized Hoisting",
+    client: "Industrial Equipment Manufacturer",
+    location: "Plant Assembly Floor",
+    year: "Precision Rigging",
+    category: "installation",
+    categoryLabel: "Machine Installation",
+    image: site_precision_rigging,
+    additionalImages: [site_crate_unloading, site_tank_base],
+    description: "Specialized lifting and sub-assembly handling using precision spreader bars, custom slings, and floor pallet jacks to place sensitive industrial drives without surface impact.",
+    badge: "Precision Rigging"
+  },
+  {
+    id: "heavy-crate-skidding-unloading",
+    title: "Heavy Crate Unloading, Component Skidding & Machine Alignment",
+    client: "Turnkey Plant Expansion Project",
+    location: "Inbound Receiving Bay",
+    year: "Heavy Skidding",
+    category: "shifting",
+    categoryLabel: "Machine Shifting",
+    image: site_crate_unloading,
+    additionalImages: [site_roller_unboxing, site_precision_rigging],
+    description: "Offloading export-grade timber crates, unboxing heavy precision industrial rollers, internal skidding over floor protection tracks, and staging equipment for final anchoring.",
+    badge: "Heavy Skidding"
+  },
+  {
+    id: "machine-foundation-tank-placement",
+    title: "Industrial Tank & Machine Foundation Placement",
+    client: "Chemical & Industrial Processing Facility",
+    location: "Plant Processing Floor",
+    year: "Foundation & Rigging",
+    category: "fabrication",
+    categoryLabel: "Fabrication & Base Work",
+    image: site_tank_base,
+    additionalImages: [site_piping_manifold, p1_alignment],
+    description: "Precise pit placement of stainless steel tank equipment, base leveling, anti-vibration pad installation, and structural steel mounting fabrication conforming to site load parameters.",
+    badge: "Equipment Base"
+  },
+  {
+    id: "ipg-asia-bopp-original",
+    title: "IPG ASIA PVT. LTD. BOPP 6.5 Mtr Line (Thailand to India)",
     client: "IPG ASIA PVT. LTD.",
     location: "Dismantled from Thailand & Installed in India",
     year: "2025-2026",
     category: "installation",
     categoryLabel: "Machine Installation",
     image: p3_ipg1,
-    additionalImages: [p3_ipg2, p3_ipg3, p3_ipg4],
+    additionalImages: [p3_ipg2, p3_ipg3, p3_ipg4, site_heavy_line],
     description: "International plant project: Dismantled 6.5-meter BOPP line machinery from Thailand and successfully reinstalled at IPG plant. Included complete mechanical assembly, heavy roller positioning, optical leveling, and electrical line connections.",
-    badge: "International Turnkey Project"
+    badge: "International Turnkey"
   },
   {
-    id: "kg-flex-piping",
-    title: "KG FLEX Industrial Piping & Fabrication",
-    client: "KG FLEX",
-    location: "Industrial Plant Site",
-    year: "2024-2025",
-    category: "piping",
-    categoryLabel: "Piping & Fabrication",
-    image: p2_kgflex2,
-    additionalImages: [p2_kgflex1, p2_kgflex3],
-    description: "Executed complete process piping and high-pressure manifold fabrication with specialized valve trains, overhead pipe rack installations, and certified weld joints for automated line operations.",
-    badge: "Process Piping"
-  },
-  {
-    id: "veejay-polyplast",
+    id: "veejay-polyplast-turnkey",
     title: "Veejay Polyplast Limited Turnkey Installation",
     client: "Veejay Polyplast Limited",
     location: "Hyderabad",
@@ -65,9 +169,9 @@ export const PROJECTS = [
     category: "installation",
     categoryLabel: "Machine Installation",
     image: p2_veejay2,
-    additionalImages: [p2_veejay1, p2_veejay3, p2_veejay4],
+    additionalImages: [p2_veejay1, p2_veejay3, p2_veejay4, site_silo_heavy_lift],
     description: "Complete turnkey installation work comprising mechanical equipment assembly, structural steel floor framing, heavy silo positioning, and electrical power connections.",
-    badge: "Turnkey Mechanical & Electrical"
+    badge: "Turnkey Mechanical"
   },
   {
     id: "asia-polyfilm-morbi",
@@ -80,33 +184,7 @@ export const PROJECTS = [
     image: p3_morbi1,
     additionalImages: [p3_morbi2, p3_morbi3, p3_morbi4],
     description: "TDO line maintenance, structural steel ducting, heavy machine base fabrication, and high-temperature oven section overhaul executed with exacting industrial tolerances.",
-    badge: "Heavy Structural Fabrication"
-  },
-  {
-    id: "heavy-crane-shifting",
-    title: "Outdoor Heavy Machinery Shifting & Crane Rigging",
-    client: "Industrial Relocation Client",
-    location: "Industrial MIDC Site",
-    year: "Turnkey Relocation",
-    category: "shifting",
-    categoryLabel: "Machine Shifting",
-    image: p1_crane,
-    additionalImages: [],
-    description: "Multi-tonnage machinery unloading, external structural crane hoisting, and precision rigging inside plant premises ensuring zero equipment damage and complete personnel safety.",
-    badge: "Heavy Crane Rigging"
-  },
-  {
-    id: "precision-alignment",
-    title: "Optical Precision Leveling & Machine Alignment",
-    client: "Industrial Manufacturing Facility",
-    location: "Plant Shop Floor",
-    year: "Precision Engineering",
-    category: "installation",
-    categoryLabel: "Machine Installation",
-    image: p1_alignment,
-    additionalImages: [],
-    description: "Sub-millimeter equipment alignment, base leveling, and dynamic load testing using precision theodolite optical stations for high-speed manufacturing lines.",
-    badge: "Optical Alignment"
+    badge: "Heavy Fabrication"
   },
   {
     id: "electrical-switchboards",
@@ -117,9 +195,8 @@ export const PROJECTS = [
     category: "installation",
     categoryLabel: "Electrical Installation",
     image: p1_panels,
-    additionalImages: [],
+    additionalImages: [p1_alignment],
     description: "Professional dismantling, safe handling, and re-erection of multi-panel motor control centers (MCC), power distribution panels, and high-voltage cable terminations.",
     badge: "Electrical Switchgear"
   }
 ];
-

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Eye, ExternalLink, Calendar, MapPin, Building, Sparkles } from 'lucide-react';
+import { Eye, Calendar, MapPin, Building, Sparkles, Image as ImageIcon } from 'lucide-react';
 import { PROJECTS, PROJECT_CATEGORIES } from '../data/projects';
 import LightboxModal from './LightboxModal';
 
@@ -18,13 +18,13 @@ export default function Projects({ onOpenQuote }) {
         <div className="text-center max-w-3xl mx-auto mb-12">
           <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#FF8C00]/10 border border-[#FF8C00]/30 text-[#FF8C00] text-xs font-semibold uppercase tracking-wider mb-3">
             <Sparkles className="w-3.5 h-3.5" />
-            <span>Executed Track Record</span>
+            <span>Executed Track Record & Site Gallery</span>
           </div>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white font-['Montserrat'] tracking-tight">
             Our Industrial <span className="text-[#FF8C00]">Projects & Gallery</span>
           </h2>
           <p className="mt-4 text-base sm:text-lg text-gray-300">
-            Showcasing real executed machinery relocation, equipment installation, piping manifolds, and structural fabrication works.
+            Real photographic proof of executed industrial machinery shifting, process piping manifolds, crane rigging, and precision plant installations.
           </p>
           <div className="w-20 h-1 bg-[#FF8C00] mx-auto mt-4 rounded-full" />
         </div>
@@ -55,16 +55,16 @@ export default function Projects({ onOpenQuote }) {
             >
               {/* Image Container with Zoom & Hover Overlay */}
               <div
-                className="relative h-60 w-full overflow-hidden bg-black cursor-pointer"
+                className="relative aspect-[16/10] w-full overflow-hidden bg-black cursor-pointer"
                 onClick={() => setActiveLightboxProject(project)}
               >
                 <img
                   src={project.image}
                   alt={project.title}
-                  className="w-full h-full object-cover filter brightness-95 group-hover:scale-108 transition-transform duration-500"
+                  className="w-full h-full object-cover filter brightness-95 group-hover:scale-105 transition-transform duration-500"
                   loading="lazy"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#181A22] via-transparent to-black/40 opacity-70 group-hover:opacity-40 transition-opacity" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#181A22] via-transparent to-black/35 opacity-70 group-hover:opacity-40 transition-opacity" />
 
                 {/* Badge */}
                 <div className="absolute top-3 left-3">
@@ -75,14 +75,15 @@ export default function Projects({ onOpenQuote }) {
 
                 {/* Photo Count Indicator if multiple images */}
                 {project.additionalImages && project.additionalImages.length > 0 && (
-                  <div className="absolute top-3 right-3 px-2 py-0.5 rounded bg-black/70 text-gray-200 text-[10px] font-semibold border border-white/10">
-                    +{project.additionalImages.length + 1} Photos
+                  <div className="absolute top-3 right-3 px-2 py-0.5 rounded-md bg-black/80 backdrop-blur-sm text-gray-200 text-[10px] font-semibold border border-white/10 flex items-center gap-1 shadow">
+                    <ImageIcon className="w-3 h-3 text-[#FF8C00]" />
+                    <span>+{project.additionalImages.length + 1} Photos</span>
                   </div>
                 )}
 
                 {/* Hover Quick View Button */}
-                <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity bg-black/40 backdrop-blur-[2px]">
-                  <span className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-[#FF8C00] text-black text-xs font-bold shadow-lg transform translate-y-2 group-hover:translate-y-0 transition-transform">
+                <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity bg-black/45 backdrop-blur-[2px]">
+                  <span className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-[#FF8C00] text-black text-xs font-bold shadow-lg transform translate-y-2 group-hover:translate-y-0 transition-transform">
                     <Eye className="w-4 h-4" />
                     <span>View Project Details</span>
                   </span>
@@ -94,7 +95,7 @@ export default function Projects({ onOpenQuote }) {
                 <div>
                   <h3
                     onClick={() => setActiveLightboxProject(project)}
-                    className="text-lg sm:text-xl font-bold text-white font-['Montserrat'] group-hover:text-[#FF8C00] transition-colors cursor-pointer"
+                    className="text-lg sm:text-xl font-bold text-white font-['Montserrat'] group-hover:text-[#FF8C00] transition-colors cursor-pointer leading-snug"
                   >
                     {project.title}
                   </h3>
@@ -139,4 +140,3 @@ export default function Projects({ onOpenQuote }) {
     </section>
   );
 }
-

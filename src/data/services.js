@@ -1,7 +1,7 @@
-import shiftingImg from '../assets/images/project_p1_img2.jpeg';
-import installationImg from '../assets/images/project_p1_img3.jpeg';
-import fabricationImg from '../assets/images/project_p2_img2.jpeg';
-import pipingImg from '../assets/images/project_p2_img6.jpeg';
+import site_heavy_line from '../assets/images/project_site_heavy_line_erection.webp';
+import site_piping_manifold from '../assets/images/project_site_piping_manifold.webp';
+import site_silo_heavy_lift from '../assets/images/project_site_silo_heavy_lift.webp';
+import site_crane_overhead from '../assets/images/project_site_crane_overhead.webp';
 
 export const SERVICES = [
   {
@@ -9,7 +9,7 @@ export const SERVICES = [
     title: "Industrial Machine Shifting",
     subtitle: "Heavy Machinery Relocation & Turnkey Rigging",
     shortDesc: "Complete industrial machinery shifting and heavy equipment relocation solutions executed with utmost safety, precision rigging, and specialized handling.",
-    image: shiftingImg,
+    image: site_silo_heavy_lift,
     icon: "Truck",
     features: [
       "Industrial machinery relocation across plant or inter-city",
@@ -30,7 +30,7 @@ export const SERVICES = [
     title: "Industrial Machine Installation",
     subtitle: "Precision Equipment Positioning & Mechanical Alignment",
     shortDesc: "Turnkey industrial equipment installation, optical leveling, accurate machine positioning, and electrical connection support.",
-    image: installationImg,
+    image: site_heavy_line,
     icon: "Cpu",
     features: [
       "Industrial equipment installation & turnkey assembly",
@@ -51,7 +51,7 @@ export const SERVICES = [
     title: "Fabrication Work",
     subtitle: "Custom Industrial & Heavy Structural Fabrication",
     shortDesc: "Specialized industrial and structural fabrication tailored to plant modifications, equipment mounts, mezzanine platforms, and custom machine enclosures.",
-    image: fabricationImg,
+    image: site_crane_overhead,
     icon: "Hammer",
     features: [
       "Industrial fabrication tailored to specific plant specifications",
@@ -72,21 +72,20 @@ export const SERVICES = [
     title: "Industrial Piping Work",
     subtitle: "Process Piping, High-Pressure Manifolds & Supports",
     shortDesc: "End-to-end industrial process piping installation, custom manifold fabrication, valve train assembly, and robust piping structural support.",
-    image: pipingImg,
+    image: site_piping_manifold,
     icon: "Workflow",
     features: [
       "Industrial piping installation for water, air, steam, and fluids",
       "Piping fabrication and high-pressure manifold lines",
       "Industrial piping support structures, clamps, and hangers",
-      "On-to-On service handling pipe and cable installation by experts"
+      "Flange connections, pressure testing, and certified welding joints"
     ],
     detailedScope: [
-      "Compressed air line installation, pneumatic manifold routing, and headers",
-      "Cooling water circuits, hydraulic lines, and process utility piping",
-      "Precision TIG / MIG welding and flange joints",
-      "Pressure testing, hydrostatic inspection, and leak-proof certification",
-      "Overhead pipe rack mounting and vibration-damping supports"
+      "Isometrics study, on-site route verification, and spool prefabrication",
+      "Stainless steel (SS 304 / 316) and MS carbon steel piping networks",
+      "Header manifolds, bypass loops, and pressure regulation stations",
+      "Hydrostatic testing, weld radiographic verification, and leak audits",
+      "Anti-vibration piping supports, saddles, and ceiling suspension anchors"
     ]
   }
 ];
-

@@ -22,3 +22,8 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Temporary scripts
+extract_assets.py
+optimize_logo.py
+process_new_images.py
