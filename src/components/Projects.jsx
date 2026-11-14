@@ -1,36 +1,36 @@
 import React, { useState } from 'react';
-import { Eye, Calendar, MapPin, Building, Sparkles, Image as ImageIcon } from 'lucide-react';
-import { PROJECTS, PROJECT_CATEGORIES } from '../data/projects';
+import { Eye, Sparkles, Image as ImageIcon } from 'lucide-react';
+import { GALLERY_IMAGES, PROJECT_CATEGORIES } from '../data/projects';
 import LightboxModal from './LightboxModal';
 
-export default function Projects({ onOpenQuote }) {
+export default function Projects() {
   const [activeCategory, setActiveCategory] = useState('all');
-  const [activeLightboxProject, setActiveLightboxProject] = useState(null);
+  const [activeLightboxIndex, setActiveLightboxIndex] = useState(null);
 
-  const filteredProjects = activeCategory === 'all'
-    ? PROJECTS
-    : PROJECTS.filter((p) => p.category === activeCategory);
+  const filteredImages = activeCategory === 'all'
+    ? GALLERY_IMAGES
+    : GALLERY_IMAGES.filter((item) => item.category === activeCategory);
 
   return (
     <section id="projects" className="py-20 lg:py-28 bg-[#121316] relative border-b border-[#23262E]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-12">
+        <div className="text-center max-w-3xl mx-auto mb-10">
           <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#FF8C00]/10 border border-[#FF8C00]/30 text-[#FF8C00] text-xs font-semibold uppercase tracking-wider mb-3">
             <Sparkles className="w-3.5 h-3.5" />
-            <span>Executed Track Record & Site Gallery</span>
+            <span>On-Site Work Gallery</span>
           </div>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white font-['Montserrat'] tracking-tight">
-            Our Industrial <span className="text-[#FF8C00]">Projects & Gallery</span>
+            Our Work <span className="text-[#FF8C00]">Gallery</span>
           </h2>
-          <p className="mt-4 text-base sm:text-lg text-gray-300">
-            Real photographic proof of executed industrial machinery shifting, process piping manifolds, crane rigging, and precision plant installations.
+          <p className="mt-3 text-base sm:text-lg text-gray-300">
+            Real photographic proof of executed industrial machinery shifting, equipment installation, piping manifolds, and crane rigging.
           </p>
           <div className="w-20 h-1 bg-[#FF8C00] mx-auto mt-4 rounded-full" />
         </div>
 
-        {/* Category Filters */}
-        <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3 mb-12">
+        {/* Category Filter Tabs */}
+        <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3 mb-10">
           {PROJECT_CATEGORIES.map((cat) => (
             <button
               key={cat.id}
@@ -46,82 +46,40 @@ export default function Projects({ onOpenQuote }) {
           ))}
         </div>
 
-        {/* Responsive Project Gallery Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-          {filteredProjects.map((project) => (
+        {/* Pure Image Grid (Only Images, No Heavy Text Cards) */}
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4 md:gap-5">
+          {filteredImages.map((item, idx) => (
             <div
-              key={project.id}
-              className="group rounded-2xl overflow-hidden bg-[#181A22] border border-[#282C38] hover:border-[#FF8C00]/60 transition-all duration-300 flex flex-col justify-between shadow-xl hover:-translate-y-1"
+              key={item.id}
+              onClick={() => setActiveLightboxIndex(idx)}
+              className="group relative aspect-[4/3] rounded-xl sm:rounded-2xl overflow-hidden bg-[#181A22] border border-[#282C38] hover:border-[#FF8C00] shadow-lg cursor-pointer transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:shadow-[#FF8C00]/10"
             >
-              {/* Image Container with Zoom & Hover Overlay */}
-              <div
-                className="relative aspect-[16/10] w-full overflow-hidden bg-black cursor-pointer"
-                onClick={() => setActiveLightboxProject(project)}
-              >
-                <img
-                  src={project.image}
-                  alt={project.title}
-                  className="w-full h-full object-cover filter brightness-95 group-hover:scale-105 transition-transform duration-500"
-                  loading="lazy"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#181A22] via-transparent to-black/35 opacity-70 group-hover:opacity-40 transition-opacity" />
+              {/* Image */}
+              <img
+                src={item.image}
+                alt={item.title}
+                className="w-full h-full object-cover filter brightness-95 group-hover:scale-108 transition-transform duration-500"
+                loading="lazy"
+              />
 
-                {/* Badge */}
-                <div className="absolute top-3 left-3">
-                  <span className="px-2.5 py-1 rounded-md bg-[#FF8C00] text-black text-[11px] font-extrabold uppercase tracking-wider shadow">
-                    {project.badge || project.categoryLabel}
-                  </span>
-                </div>
+              {/* Gradient Dark Overlay */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent opacity-60 group-hover:opacity-90 transition-opacity" />
 
-                {/* Photo Count Indicator if multiple images */}
-                {project.additionalImages && project.additionalImages.length > 0 && (
-                  <div className="absolute top-3 right-3 px-2 py-0.5 rounded-md bg-black/80 backdrop-blur-sm text-gray-200 text-[10px] font-semibold border border-white/10 flex items-center gap-1 shadow">
-                    <ImageIcon className="w-3 h-3 text-[#FF8C00]" />
-                    <span>+{project.additionalImages.length + 1} Photos</span>
-                  </div>
-                )}
-
-                {/* Hover Quick View Button */}
-                <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity bg-black/45 backdrop-blur-[2px]">
-                  <span className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-[#FF8C00] text-black text-xs font-bold shadow-lg transform translate-y-2 group-hover:translate-y-0 transition-transform">
-                    <Eye className="w-4 h-4" />
-                    <span>View Project Details</span>
-                  </span>
-                </div>
+              {/* Category Badge on Top */}
+              <div className="absolute top-2.5 left-2.5 opacity-90 group-hover:opacity-100 transition-opacity">
+                <span className="px-2 py-0.5 rounded-md bg-black/75 backdrop-blur-sm border border-white/10 text-[#FF8C00] text-[10px] font-bold uppercase tracking-wider">
+                  {item.categoryLabel}
+                </span>
               </div>
 
-              {/* Project Card Info */}
-              <div className="p-5 sm:p-6 flex-1 flex flex-col justify-between space-y-4">
-                <div>
-                  <h3
-                    onClick={() => setActiveLightboxProject(project)}
-                    className="text-lg sm:text-xl font-bold text-white font-['Montserrat'] group-hover:text-[#FF8C00] transition-colors cursor-pointer leading-snug"
-                  >
-                    {project.title}
-                  </h3>
-
-                  <p className="mt-2 text-xs sm:text-sm text-gray-300 line-clamp-2 leading-relaxed">
-                    {project.description}
-                  </p>
-                </div>
-
-                <div className="pt-3 border-t border-[#252834] space-y-1.5 text-xs text-gray-400">
-                  <div className="flex items-center gap-1.5 truncate">
-                    <Building className="w-3.5 h-3.5 text-[#FF8C00] shrink-0" />
-                    <span className="truncate">Client: <strong className="text-gray-200">{project.client}</strong></span>
-                  </div>
-                  <div className="flex items-center justify-between text-gray-400">
-                    <span className="flex items-center gap-1.5 truncate">
-                      <MapPin className="w-3.5 h-3.5 text-[#FF8C00] shrink-0" />
-                      <span className="truncate">{project.location}</span>
-                    </span>
-                    {project.year && (
-                      <span className="flex items-center gap-1 shrink-0 text-gray-300 font-medium">
-                        <Calendar className="w-3.5 h-3.5 text-[#FF8C00]" />
-                        <span>{project.year}</span>
-                      </span>
-                    )}
-                  </div>
+              {/* Title & View Icon on Hover / Bottom */}
+              <div className="absolute bottom-0 inset-x-0 p-3 sm:p-4 transform translate-y-1 group-hover:translate-y-0 transition-transform">
+                <p className="text-xs sm:text-sm font-bold text-white font-['Montserrat'] line-clamp-1 group-hover:text-[#FF8C00] transition-colors">
+                  {item.title}
+                </p>
+                <div className="mt-1 flex items-center gap-1.5 text-[11px] text-gray-300 opacity-0 group-hover:opacity-100 transition-opacity">
+                  <Eye className="w-3.5 h-3.5 text-[#FF8C00]" />
+                  <span>Click to view full photo</span>
                 </div>
               </div>
             </div>
@@ -129,12 +87,13 @@ export default function Projects({ onOpenQuote }) {
         </div>
       </div>
 
-      {/* Lightbox Modal */}
-      {activeLightboxProject && (
+      {/* Full-screen Lightbox Modal */}
+      {activeLightboxIndex !== null && (
         <LightboxModal
-          project={activeLightboxProject}
-          onClose={() => setActiveLightboxProject(null)}
-          onOpenQuote={onOpenQuote}
+          images={filteredImages}
+          activeIndex={activeLightboxIndex}
+          onClose={() => setActiveLightboxIndex(null)}
+          onChangeIndex={(newIdx) => setActiveLightboxIndex(newIdx)}
         />
       )}
     </section>
