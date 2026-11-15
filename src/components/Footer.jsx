@@ -134,14 +134,12 @@ export default function Footer({ onOpenInquiries }) {
               </div>
               <div className="flex items-start gap-2.5">
                 <Mail className="w-4 h-4 text-[#FF8C00] shrink-0 mt-0.5" />
-                <div className="flex flex-col truncate">
-                  <a href={`mailto:${COMPANY_INFO.primaryEmail}`} className="text-[#FF8C00] hover:underline truncate">
-                    {COMPANY_INFO.primaryEmail}
-                  </a>
-                  <a href={`mailto:${COMPANY_INFO.secondaryEmail}`} className="text-gray-400 hover:text-white truncate">
-                    {COMPANY_INFO.secondaryEmail}
-                  </a>
-                </div>
+                <a 
+                  href="mailto:sunilmote123@gmail.com" 
+                  className="text-gray-200 hover:text-[#FF8C00] transition-colors truncate"
+                >
+                  sunilmote123@gmail.com
+                </a>
               </div>
             </div>
           </div>
