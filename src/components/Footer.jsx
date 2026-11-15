@@ -134,12 +134,19 @@ export default function Footer({ onOpenInquiries }) {
               </div>
               <div className="flex items-start gap-2.5">
                 <Mail className="w-4 h-4 text-[#FF8C00] shrink-0 mt-0.5" />
-                <a 
-                  href="mailto:sunilmote123@gmail.com" 
-                  className="text-gray-200 hover:text-[#FF8C00] transition-colors truncate"
-                >
-                  sunilmote123@gmail.com
-                </a>
+                <div className="flex flex-col gap-1 truncate text-xs">
+                  <a href={`mailto:${COMPANY_INFO.primaryEmail}`} className="text-[#FF8C00] hover:underline truncate" title="Primary Official Email">
+                    {COMPANY_INFO.primaryEmail}
+                  </a>
+                  <a href={`mailto:${COMPANY_INFO.secondaryEmail}`} className="text-gray-300 hover:text-white truncate" title="Sunil Mote">
+                    {COMPANY_INFO.secondaryEmail} <span className="text-[11px] text-gray-400">(Sunil Mote)</span>
+                  </a>
+                  {COMPANY_INFO.tertiaryEmail && (
+                    <a href={`mailto:${COMPANY_INFO.tertiaryEmail}`} className="text-gray-400 hover:text-white truncate" title="Sandip Rajput">
+                      {COMPANY_INFO.tertiaryEmail} <span className="text-[11px] text-gray-500">(Sandip Rajput)</span>
+                    </a>
+                  )}
+                </div>
               </div>
             </div>
           </div>

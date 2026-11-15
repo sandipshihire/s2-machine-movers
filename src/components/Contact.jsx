@@ -84,7 +84,7 @@ export default function Contact({ prefilledService }) {
 
     const submissionPayload = {
       _subject: `New Machinery Inquiry from ${formData.fullName} (${formData.companyName}) - S2 Machine Movers`,
-      _cc: "sunilmote123@gmail.com",
+      _cc: "sunilmote123@gmail.com, Sandiprajput33@gmail.com",
       _replyto: formData.email,
       _template: "table",
       "Full Name": formData.fullName,
@@ -227,7 +227,7 @@ export default function Contact({ prefilledService }) {
                   </div>
                   <div className="flex-1 truncate">
                     <span className="text-xs text-gray-400 uppercase tracking-wider">Email Correspondence</span>
-                    <div className="flex flex-col gap-1 mt-1">
+                    <div className="flex flex-col gap-1.5 mt-1">
                       <a
                         href={`mailto:${COMPANY_INFO.primaryEmail}`}
                         className="text-sm font-semibold text-[#FF8C00] hover:underline truncate block"
@@ -236,10 +236,20 @@ export default function Contact({ prefilledService }) {
                       </a>
                       <a
                         href={`mailto:${COMPANY_INFO.secondaryEmail}`}
-                        className="text-xs font-medium text-gray-300 hover:text-white truncate block"
+                        className="text-xs font-medium text-gray-300 hover:text-white truncate block flex items-center justify-between"
                       >
-                        {COMPANY_INFO.secondaryEmail}
+                        <span>{COMPANY_INFO.secondaryEmail}</span>
+                        <span className="text-[11px] text-gray-500">(Sunil Mote)</span>
                       </a>
+                      {COMPANY_INFO.tertiaryEmail && (
+                        <a
+                          href={`mailto:${COMPANY_INFO.tertiaryEmail}`}
+                          className="text-xs font-medium text-gray-400 hover:text-white truncate block flex items-center justify-between"
+                        >
+                          <span>{COMPANY_INFO.tertiaryEmail}</span>
+                          <span className="text-[11px] text-gray-500">(Sandip Rajput)</span>
+                        </a>
+                      )}
                     </div>
                   </div>
                 </div>

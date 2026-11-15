@@ -52,7 +52,7 @@ export default function QuickQuoteModal({ isOpen, onClose, defaultService }) {
 
     const payload = {
       _subject: `New Quick Quote Request from ${formData.fullName} (${formData.companyName}) - S2 Machine Movers`,
-      _cc: "sunilmote123@gmail.com",
+      _cc: "sunilmote123@gmail.com, Sandiprajput33@gmail.com",
       _replyto: formData.email,
       _template: "table",
       "Full Name": formData.fullName,

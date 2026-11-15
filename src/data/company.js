@@ -15,7 +15,11 @@ export const COMPANY_INFO = {
   primaryEmail: "MachineMovers@rediffmail.com",
   secondaryEmail: "sunilmote123@gmail.com",
   tertiaryEmail: "Sandiprajput33@gmail.com",
-  footerEmail: "sunilmote123@gmail.com",
+  emails: [
+    { email: "MachineMovers@rediffmail.com", label: "Primary" },
+    { email: "sunilmote123@gmail.com", label: "Sunil Mote" },
+    { email: "Sandiprajput33@gmail.com", label: "Sandip Rajput" }
+  ],
 
   whatsappNumber: "917798030082",
   whatsappMessage: "Hello S2 Machine Movers, I would like to inquire about your industrial machinery shifting and installation services.",
