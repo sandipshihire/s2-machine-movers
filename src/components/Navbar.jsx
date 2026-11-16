@@ -82,8 +82,8 @@ export default function Navbar({ onOpenQuote, onOpenInquiries }) {
       {/* Main Sticky Navbar */}
       <nav
         className={`sticky top-0 z-50 transition-all duration-300 ${isScrolled
-            ? 'bg-[#141519]/95 backdrop-blur-md shadow-xl border-b border-[#2A2D35] py-2'
-            : 'bg-[#16171C] border-b border-[#23262E] py-3'
+          ? 'bg-[#141519]/95 backdrop-blur-md shadow-xl border-b border-[#2A2D35] py-2'
+          : 'bg-[#16171C] border-b border-[#23262E] py-3'
           }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
