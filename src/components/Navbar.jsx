@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X, Phone, MessageSquare, ArrowRight, ShieldCheck, Inbox } from 'lucide-react';
-import logoImg from '../assets/images/logo_optimized.webp';
+import logoImg from '../assets/images/logo_white.png';
 import { COMPANY_INFO } from '../data/company';
 
 export default function Navbar({ onOpenQuote, onOpenInquiries }) {
